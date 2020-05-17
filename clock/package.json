@@ -1,0 +1,21 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-clock": "./node_modules/.bin/babel clock/jsx -d clock/js -w",
+    "build-clock-analog-digital": "./node_modules/.bin/babel clock-analog-digital/jsx -d clock-analog-digital/js -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "babel": {
+    "presets": ["@babel/preset-react"]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-react": "^7.9.4"
+  }
+}
