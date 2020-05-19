@@ -2,6 +2,7 @@
 class Content extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       counter: 0
     };
@@ -14,10 +15,10 @@ class Content extends React.Component {
   }
 
   render() {
-    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
-      onClick: this.handleClick.bind(this),
-      className: "btn btn-primary"
-    }, "Don't click me ", this.state.counter, " times!"));
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(ClickCounterButton, {
+      counter: this.state.counter,
+      handler: this.handleClick
+    }));
   }
 
 }
