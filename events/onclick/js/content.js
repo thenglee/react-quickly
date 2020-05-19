@@ -16,8 +16,9 @@ class Content extends React.Component {
 
   render() {
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(ClickCounterButton, {
-      counter: this.state.counter,
       handler: this.handleClick
+    }), /*#__PURE__*/React.createElement(Counter, {
+      counter: this.state.counter
     }));
   }
 

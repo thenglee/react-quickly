@@ -14,10 +14,8 @@ class Content extends React.Component {
   render() {
     return (
       <div>
-        <ClickCounterButton
-          counter={this.state.counter}
-          handler={this.handleClick}
-        />
+        <ClickCounterButton handler={this.handleClick} />
+        <Counter counter={this.state.counter} />
       </div>
     );
   }
