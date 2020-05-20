@@ -8,6 +8,7 @@
     "build-mouse": "./node_modules/.bin/babel mouse/jsx -d mouse/js -w",
     "build-onclick": "./node_modules/.bin/babel onclick/jsx -d onclick/js -w",
     "build-radio": "./node_modules/.bin/babel radio/jsx -d radio/js -w",
+    "build-slider": "./node_modules/.bin/babel slider/jsx -d slider/js -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
