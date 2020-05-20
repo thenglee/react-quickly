@@ -1,3 +1,9 @@
 // @format
 
-ReactDOM.render(<SliderButtons />, document.getElementById('content'));
+ReactDOM.render(
+  <div>
+    <SliderValue />
+    <SliderButtons />
+  </div>,
+  document.getElementById('content'),
+);

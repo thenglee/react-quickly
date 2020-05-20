@@ -1,2 +1,2 @@
 // @format
-ReactDOM.render( /*#__PURE__*/React.createElement(SliderButtons, null), document.getElementById('content'));
+ReactDOM.render( /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SliderValue, null), /*#__PURE__*/React.createElement(SliderButtons, null)), document.getElementById('content'));

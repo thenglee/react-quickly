@@ -13,7 +13,17 @@
 
    <script>
      $(function() {
-       $('#slider').slider({})
+       let handleChange = (e, ui) => {
+         var slideEvent = new CustomEvent('slide', {
+           detail: { ui: ui, jQueryEvent: e}
+          })
+          window.dispatchEvent(slideEvent)
+       }
+
+       $('#slider').slider({
+         'change': handleChange,
+         'slide': handleChange
+       })
      })
    </script>
   </head>
@@ -23,6 +33,7 @@
       <div id="slider"></div>
 
       <div id="content"></div>
+      <script src="js/slider-value.js"></script>
       <script src="js/slider-buttons.js"></script>
       <script src="js/script.js"></script>
     </body>
