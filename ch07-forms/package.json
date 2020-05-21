@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-elements": "./node_modules/.bin/babel elements/jsx -d elements/js -w",
+    "build-account": "./node_modules/.bin/babel account/jsx -d account/js -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
