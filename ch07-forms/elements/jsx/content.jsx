@@ -7,6 +7,8 @@ class Content extends React.Component {
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
       selectedRadio: 'react',
@@ -45,9 +47,27 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
     console.log(event.target.value, event.target.selected);
   }
 
+  handleFirstNameChange(event) {
+    this.setState({firstName: event.target.value});
+  }
+
+  handleSubmit(event) {
+    console.log(event.target.value, event.target.selected);
+    fetch(this.props['data-url'], {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log('Submitted: ', data);
+      });
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h2>input: text</h2>
         <input
           type="text"
@@ -149,7 +169,7 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
         />
         <hr />
         <textarea
-          name="description"
+          name="description1"
           defaultValue={
             'Pro Express.js is for the reader\nwho wants to quickly get up-to-speed with Express.js, \nthe flexible Node.js framework'
           }
@@ -163,6 +183,22 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
           <option value="node">Node</option>
           <option value="python">Python</option>
         </select>
+        <hr />
+        <select multiple defaultValue={['meteor', 'react']}>
+          <option value="meteor">Meteor</option>
+          <option value="react">React</option>
+          <option value="jQuery">jQuery</option>
+        </select>
+        <hr />
+        <h2>input: first name [text]</h2>
+        <input
+          type="text"
+          name="first-name"
+          onChange={this.handleFirstNameChange}
+        />
+        <hr />
+        <h2>input: button</h2>
+        <input type="button" defaultValue="Send" onClick={this.handleSubmit} />
       </form>
     );
   }
