@@ -37,8 +37,21 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
     console.log('onChange event: ', event.target.value, event.target.checked);
   }
 
+  handleInput(event) {
+    console.log('onInput event: ', event.target.value, event.target.checked);
+  }
+
   render() {
-    return /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("h2", null, "input: radio"), /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
+    return /*#__PURE__*/React.createElement("form", null, /*#__PURE__*/React.createElement("h2", null, "input: text"), /*#__PURE__*/React.createElement("input", {
+      type: "text",
+      name: "new-book-title",
+      defaultValue: "Node: The Best Parts"
+    }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "input: password"), /*#__PURE__*/React.createElement("input", {
+      type: "password",
+      defaultValue: "123456",
+      onChange: this.handleChange,
+      onInput: this.handleInput
+    }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("h2", null, "input: radio"), /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
       type: "radio",
       name: "radioGroup",
       value: "angular",

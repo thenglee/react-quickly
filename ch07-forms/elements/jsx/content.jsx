@@ -34,9 +34,28 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
     console.log('onChange event: ', event.target.value, event.target.checked);
   }
 
+  handleInput(event) {
+    console.log('onInput event: ', event.target.value, event.target.checked);
+  }
+
   render() {
     return (
       <form>
+        <h2>input: text</h2>
+        <input
+          type="text"
+          name="new-book-title"
+          defaultValue="Node: The Best Parts"
+        />
+        <hr />
+        <h2>input: password</h2>
+        <input
+          type="password"
+          defaultValue="123456"
+          onChange={this.handleChange}
+          onInput={this.handleInput}
+        />
+        <hr />
         <h2>input: radio</h2>
         <label>
           <input
