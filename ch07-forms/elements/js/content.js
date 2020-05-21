@@ -4,6 +4,7 @@ class Content extends React.Component {
     super(props);
     this.handleRadio = this.handleRadio.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       selectedRadio: 'react',
       checkboxGroup: {
@@ -11,7 +12,9 @@ class Content extends React.Component {
         react: true,
         express: false,
         mongodb: false
-      }
+      },
+      description: `With the right pattern, applications will be more scalable and easier to maintain.
+If you aspire one day to become a Node.js architect (or maybe you're already one and want to extend your knowledge), this presentation is for you.`
     };
   }
 
@@ -28,6 +31,10 @@ class Content extends React.Component {
     this.setState({
       checkboxGroup: obj
     });
+  }
+
+  handleChange(event) {
+    console.log('onChange event: ', event.target.value, event.target.checked);
   }
 
   render() {
@@ -73,7 +80,15 @@ class Content extends React.Component {
       value: "mongodb",
       checked: this.state.checkboxGroup['mongodb'],
       onChange: this.handleCheckbox
-    }), "MongoDB"));
+    }), "MongoDB"), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("textarea", {
+      name: "description",
+      defaultValue: this.state.description,
+      onChange: this.handleChange
+    }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement("textarea", {
+      name: "description",
+      defaultValue: 'Pro Express.js is for the reader\nwho wants to quickly get up-to-speed with Express.js, \nthe flexible Node.js framework',
+      onChange: this.handleChange
+    }));
   }
 
 }
