@@ -6,6 +6,7 @@ class Content extends React.Component {
     this.handleRadio = this.handleRadio.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
 
     this.state = {
       selectedRadio: 'react',
@@ -15,6 +16,7 @@ class Content extends React.Component {
         express: false,
         mongodb: false,
       },
+      selectedValue: 'node',
       description: `With the right pattern, applications will be more scalable and easier to maintain.
 If you aspire one day to become a Node.js architect (or maybe you're already one and want to extend your knowledge), this presentation is for you.`,
     };
@@ -36,6 +38,11 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
 
   handleInput(event) {
     console.log('onInput event: ', event.target.value, event.target.checked);
+  }
+
+  handleSelectChange(event) {
+    this.setState({selectedValue: event.target.value});
+    console.log(event.target.value, event.target.selected);
   }
 
   render() {
@@ -148,6 +155,14 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
           }
           onChange={this.handleChange}
         />
+        <hr />
+        <select
+          value={this.state.selectedValue}
+          onChange={this.handleSelectChange}>
+          <option value="ruby">Ruby</option>
+          <option value="node">Node</option>
+          <option value="python">Python</option>
+        </select>
       </form>
     );
   }
