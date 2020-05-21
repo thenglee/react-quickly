@@ -4,21 +4,13 @@ class Content extends React.Component {
     super(props);
     this.handleRadio = this.handleRadio.bind(this);
     this.state = {
-      radioGroup: {
-        angular: false,
-        react: true,
-        polymer: false
-      }
+      selectedRadio: 'react'
     };
   }
 
   handleRadio(event) {
-    let obj = {}; // erase other radios
-
-    obj[event.target.value] = event.target.checked; // true
-
     this.setState({
-      radioGroup: obj
+      selectedRadio: event.target.value
     });
   }
 
@@ -27,19 +19,19 @@ class Content extends React.Component {
       type: "radio",
       name: "radioGroup",
       value: "angular",
-      checked: this.state.radioGroup['angular'],
+      checked: this.state.selectedRadio === 'angular',
       onChange: this.handleRadio
     }), "Angular"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
       type: "radio",
       name: "radioGroup",
       value: "react",
-      checked: this.state.radioGroup['react'],
+      checked: this.state.selectedRadio === 'react',
       onChange: this.handleRadio
     }), "React"), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
       type: "radio",
       name: "radioGroup",
       value: "polymer",
-      checked: this.state.radioGroup['polymer'],
+      checked: this.state.selectedRadio === 'polymer',
       onChange: this.handleRadio
     }), "Polymer"));
   }
