@@ -1,0 +1,24 @@
+{
+  "name": "ch08-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-children": "./node_modules/.bin/babel children/jsx -d children/js -w",
+    "build-default-props": "./node_modules/.bin/babel default-props/jsx -d default-props/js -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-react": "^7.9.4"
+  }
+}
