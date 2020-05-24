@@ -1,42 +1,28 @@
 // @format
-
 class Link extends React.Component {
   render() {
-    const url =
-      '/' +
-      this.props.label
-        .toLowerCase()
-        .trim()
-        .replace(' ', '-');
-
-    return React.createElement(
-      'div',
-      null,
-      React.createElement('a', {href: url}, this.props.label),
-      React.createElement('br'),
-    );
+    const url = '/' + this.props.label.toLowerCase().trim().replace(' ', '-');
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+      href: url
+    }, this.props.label), /*#__PURE__*/React.createElement("br", null));
   }
+
 }
 
 class Menu extends React.Component {
   render() {
     let menus = ['Home', 'About', 'Services', 'Portfolio', 'Contact us']; // mock data store
 
-    return React.createElement(
-      'div',
-      null,
-      menus.map((v, i) => {
-        return React.createElement(
-          'div',
-          {key: i},
-          React.createElement(Link, {label: v}),
-        );
-      }),
-    );
+    console.log('hello');
+    return /*#__PURE__*/React.createElement("div", null, menus.map((v, i) => {
+      return /*#__PURE__*/React.createElement("div", {
+        key: i
+      }, /*#__PURE__*/React.createElement(Link, {
+        label: v
+      }));
+    }));
   }
+
 }
 
-ReactDOM.render(
-  React.createElement(Menu, null),
-  document.getElementById('menu'),
-);
+ReactDOM.render( /*#__PURE__*/React.createElement(Menu, null), document.getElementById('menu'));
