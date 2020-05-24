@@ -5,7 +5,6 @@
   "main": "react-dom.js",
   "scripts": {
     "build": "./node_modules/.bin/babel script.jsx -o script.js -w",
-    "copy-react-dev": "cp ./node_modules/react/cjs/react.development.js . && mv react.development.js react.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
