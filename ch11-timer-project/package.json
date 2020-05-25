@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel script.jsx -o script.js -w",
+    "build": "./node_modules/.bin/babel timer.jsx -o timer.js -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
