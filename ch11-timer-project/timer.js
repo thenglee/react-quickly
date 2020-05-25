@@ -1,33 +1,25 @@
 // @format
-class Timer extends React.Component {
-  render() {
-    if (this.props.timeLeft == 0) {
-      document.getElementById('end-of-time').play();
+const Timer = props => {
+  if (props.timeLeft == 0) {
+    document.getElementById('end-of-time').play();
+  }
+
+  if (props.timeLeft == null || props.timeLeft == 0) {
+    return /*#__PURE__*/React.createElement("div", null);
+  }
+
+  return /*#__PURE__*/React.createElement("h1", null, "Time left: ", props.timeLeft);
+};
+
+const Button = props => {
+  return /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "btn btn-default",
+    onClick: () => {
+      props.startTimer(props.time);
     }
-
-    if (this.props.timeLeft == null || this.props.timeLeft == 0) {
-      return /*#__PURE__*/React.createElement("div", null);
-    }
-
-    return /*#__PURE__*/React.createElement("h1", null, "Time left: ", this.props.timeLeft);
-  }
-
-}
-
-class Button extends React.Component {
-  handleClick(event) {
-    return this.props.startTimer(this.props.time);
-  }
-
-  render() {
-    return /*#__PURE__*/React.createElement("button", {
-      type: "button",
-      className: "btn btn-default",
-      onClick: this.handleClick.bind(this)
-    }, this.props.time, " seconds", ' ');
-  }
-
-}
+  }, props.time, " seconds", ' ');
+};
 
 class TimerWrapper extends React.Component {
   constructor(props) {
@@ -43,7 +35,8 @@ class TimerWrapper extends React.Component {
     clearInterval(this.state.timer);
     let timer = setInterval(() => {
       console.log('2: Inside of setInterval');
-      var timeLeft = this.state.timeLeft - 1;
+      var timeLeft = this.state.timeLeft - 1; // setState timeLeft will run first
+
       if (timeLeft == 0) clearInterval(timer);
       this.setState({
         timeLeft: timeLeft
