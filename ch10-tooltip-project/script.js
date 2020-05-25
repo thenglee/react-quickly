@@ -35,8 +35,7 @@ class Tooltip extends React.Component {
       style: {
         color: 'blue'
       },
-      onMouseEnter: this.toggle,
-      onMouseOut: this.toggle
+      onClick: this.toggle
     }, this.props.children), /*#__PURE__*/React.createElement("div", {
       className: "tooltip bottom",
       style: style,
