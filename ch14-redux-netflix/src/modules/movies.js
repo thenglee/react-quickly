@@ -11,6 +11,8 @@ const initialState = {
 };
 
 module.exports = {
+  fetchMoviesActionCreator: movies => ({type: FETCH_MOVIES, movies}),
+  fetchMovieActionCreator: index => ({type: FETCH_MOVIE, index}),
   reducer: handleActions(
     {
       [FETCH_MOVIES]: (state, action) => ({...state, all: action.movies}),
