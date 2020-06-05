@@ -1,8 +1,8 @@
 // @format
 
 const React = require('react');
-const {connect} = react('react-redux');
-const styles = redux('./app.css');
+const {connect} = require('react-redux');
+const styles = require('./app.css');
 
 class App extends React.Component {
   render() {

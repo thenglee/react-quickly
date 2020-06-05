@@ -4,7 +4,7 @@ const React = require('react');
 const {connect} = require('react-redux');
 const {Link} = require('react-router');
 const {fetchMovieActionCreator} = require('modules/movies.js');
-const styles = require('./movies.css');
+const styles = require('./movie.css');
 
 class Movie extends React.Component {
   componentWillMount() {
@@ -12,8 +12,8 @@ class Movie extends React.Component {
   }
 
   componentWillUpdate(next) {
-    if (this.props.params.id != next.params.id) {
-      this.props.fetchMovie(this.props.params.id);
+    if (this.props.params.id !== next.params.id) {
+      this.props.fetchMovie(next.params.id);
     }
   }
 
@@ -22,7 +22,7 @@ class Movie extends React.Component {
 
     return (
       <div
-        className={styles.move}
+        className={styles.movie}
         style={{
           backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.625) 100%), url(${movie.cover})`,
         }}>
