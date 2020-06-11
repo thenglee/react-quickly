@@ -1,0 +1,16 @@
+{
+  "name": "generate-password",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -e \"console.log(require('./generate-password.js')())\"",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest-cli": "19.0.2"
+  }
+}
